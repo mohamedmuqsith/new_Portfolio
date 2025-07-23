@@ -293,3 +293,139 @@ filterButtons.forEach(button => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // --- 💬 TESTIMONIAL SLIDER LOGIC ---
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    if (slides.length > 0) {
+        showSlide(currentSlide);
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Optional: Auto-slide
+        setInterval(() => {
+            nextBtn.click();
+        }, 7000);
+    }
+
+
+    // --- 📞 CONTACT FORM VALIDATION & SUBMISSION ---
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+            formStatus.textContent = 'Sending...';
+
+            // This is a placeholder for form submission.
+            // Replace with your actual form submission logic (e.g., using Fetch API to a serverless function or a service like Formspree).
+            // For demonstration, we'll simulate a successful submission after 2 seconds.
+            setTimeout(() => {
+                formStatus.textContent = 'Message sent successfully!';
+                formStatus.style.color = 'var(--primary-color)';
+                contactForm.reset();
+            }, 2000);
+        });
+    }
+});
+
+function setup() {
+    let canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent('particle-canvas'); // Attach the canvas to our div
+
+    // Particle settings
+    const particlesLength = Math.floor(window.innerWidth / 15);
+    window.particles = [];
+    for (let i = 0; i < particlesLength; i++) {
+        particles.push(new Particle());
+    }
+}
+
+function draw() {
+    // Use the color scheme from the CSS variables
+    let bgColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
+    let particleColor = color(getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim());
+
+    background(bgColor);
+
+    particles.forEach((p, index) => {
+        p.update();
+        p.draw(particleColor);
+        p.checkParticles(particles.slice(index));
+    });
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+
+class Particle {
+    constructor() {
+        this.pos = createVector(random(width), random(height));
+        this.vel = createVector(random(-0.6, 0.6), random(-0.6, 0.6));
+        this.size = 2;
+    }
+
+    update() {
+        this.pos.add(this.vel);
+        this.edges();
+    }
+
+    draw(particleColor) {
+        noStroke();
+        fill(particleColor);
+        circle(this.pos.x, this.pos.y, this.size);
+    }
+
+    edges() {
+        if (this.pos.x < 0 || this.pos.x > width) {
+            this.vel.x *= -1;
+        }
+        if (this.pos.y < 0 || this.pos.y > height) {
+            this.vel.y *= -1;
+        }
+    }
+
+    checkParticles(particles) {
+        particles.forEach(particle => {
+            const d = dist(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
+            if (d < 120) {
+                // Check distance to mouse
+                const mouse_d = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+                if (mouse_d < 200) {
+                    let lineColor = color(getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim());
+                    let alpha = map(d, 0, 120, 0, 0.25); // Fade lines based on distance
+                    let mouseAlpha = map(mouse_d, 0, 200, 0, 1); // Fade lines based on mouse proximity
+                    
+                    stroke(red(lineColor), green(lineColor), blue(lineColor), 255 * alpha * mouseAlpha);
+                    strokeWeight(1);
+                    line(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
+                }
+            }
+        });
+    }
+}
+

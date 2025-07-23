@@ -13,9 +13,14 @@
     <link rel="stylesheet" href="style.css">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- p5.js Library for background animation -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    
     
 </head>
 <body>
+      <div id="particle-canvas"></div>
 
     <!-- Preloader -->
     <div class="preloader">
@@ -74,7 +79,7 @@
 
         <!-- About Section -->
         <section id="about" data-animate>
-            <h2 class="section-heading"><span class="section-number">01.</span> About Me</h2>
+            <h2 class="section-heading reveal-text"><span class="section-number">01.</span> About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p>Hello! I'm Mohamed, a self-driven developer with a deep curiosity for both full-stack development and the world of data. My journey in tech began with a simple line of code and has since evolved into a passion for building complete, real-world applications from scratch.</p>
@@ -97,9 +102,34 @@
             </div>
         </section>
 
+        <!-- Services Section -->
+<section id="services" data-animate>
+    <h2 class="section-heading reveal-text"><span class="section-number">02.</span> What I Do</h2>
+    <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card interactive">
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-description">I build responsive and high-performance web applications using the MERN stack, ensuring a seamless experience across all devices.</p>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card interactive">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <h3 class="service-title">Data Analysis</h3>
+            <p class="service-description">I extract valuable insights from complex datasets, utilizing Python and its libraries to create meaningful data visualizations and reports.</p>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card interactive">
+            <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-description">I design intuitive and engaging user interfaces that prioritize user experience, making technology accessible and enjoyable to use.</p>
+        </div>
+    </div>
+</section>
+
         <!-- Skills Section -->
         <section id="skills">
-            <h2 class="section-heading"><span class="section-number">02.</span> My Skills</h2>
+            <h2 class="section-heading reveal-text"><span class="section-number">03.</span> My Skills</h2>
             <div class="skills-container">
                 <div class="skills-chart-container">
                     <div class="chart-container">
@@ -129,7 +159,7 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2 class="section-heading"><span class="section-number">03.</span> Featured Projects</h2>
+            <h2 class="section-heading reveal-text"><span class="section-number">04.</span> Featured Projects</h2>
             <div class="project-grid" data-animate>
                 <!-- Project 1 -->
                 <div class="project-card interactive">
@@ -192,9 +222,30 @@
             </div>
 
         </section>
-
+<!-- Testimonials Section -->
+<section id="testimonials" data-animate>
+    <h2 class="section-heading reveal-text"><span class="section-number">05.</span> What Others Say</h2>
+    <div class="testimonial-slider">
+        <div class="testimonial-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide active">
+                <img src="assets/aboutpic.jpg" alt="Testimonial author" class="testimonial-img">
+                <p class="testimonial-text">"Mohamed is a highly skilled developer who delivered our project on time and with great attention to detail. His ability to work with the MERN stack is exceptional."</p>
+                <h4 class="testimonial-author">- Jane Doe, Project Manager</h4>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide">
+                <img src="https://via.placeholder.com/80" alt="Testimonial author" class="testimonial-img">
+                <p class="testimonial-text">"The insights from Mohamed's data analysis were instrumental in our new marketing strategy. He has a knack for finding patterns in the noise."</p>
+                <h4 class="testimonial-author">- John Smith, Marketing Head</h4>
+            </div>
+        </div>
+        <button class="slider-btn prev-btn interactive"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn interactive"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
         <section id="experience">
-    <h2 class="section-heading"><span class="section-number">05.</span> Experience</h2>
+    <h2 class="section-heading reveal-text"><span class="section-number">06.</span> Experience</h2>
     <div class="timeline">
         <div class="timeline-item" data-animate>
             <div class="timeline-date">2022 - Present</div>
@@ -208,19 +259,24 @@
     </div>
 </section>
 
-        <!-- Contact Section -->
-        <section id="contact" data-animate>
-            <h2 class="section-heading"><span class="section-number">04.</span> Get In Touch</h2>
-            <p>I'm currently seeking new opportunities and am open to collaboration. My inbox is always open, whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
-            <a href="mailto:mohamed.mohamedmukshidh35@gmail.com" class="cta-button interactive">Say Hello</a>
-            <div class="social-links">
-                <a href="https://github.com/mohamedmuqsith" target="_blank" class="interactive"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/m-f-m-mukshith/" target="_blank" class="interactive"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/muqsithmalli6/" target="_blank" class="interactive"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" class="interactive"><i class="fab fa-twitter"></i></a>
-            </div>
-        </section>
-    </main>
+   <!-- Contact Section -->
+<section id="contact" data-animate>
+    <h2 class="section-heading reveal-text"><span class="section-number">07.</span> Get In Touch</h2>
+    <p>I'm currently seeking new opportunities and am open to collaboration. Whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
+    <form id="contact-form" class="contact-form" action="YOUR_FORM_ENDPOINT" method="POST">
+        <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="cta-button interactive">Send Message</button>
+    </form>
+    <div id="form-status"></div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -235,8 +291,6 @@
     
     <!-- Scripts for Animations -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js">
-      
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
