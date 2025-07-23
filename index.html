@@ -3,31 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Mukshidh | Full-Stack Developer & Data Analyst</title>
+    <title>Mohamed Mukshith | Full-Stack Developer & Data Analyst</title>
     
     <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="style.css">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Preloader -->
     <div class="preloader">
-        <div class="loader-logo">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#00BFFF" d="M40,-60.4C52.5,-52.3,63.7,-42.2,69.6,-29.3C75.5,-16.4,76.1,-0.6,73.2,13.8C70.3,28.2,63.8,41.2,53.2,52.7C42.6,64.2,27.9,74.2,12.1,78.6C-3.7,83.1,-20.6,82.1,-34.5,74.2C-48.4,66.4,-59.3,51.7,-66.3,35.4C-73.3,19.1,-76.4,1.2,-72.1,-13.6C-67.8,-28.3,-56.1,-40.9,-42.7,-49.2C-29.3,-57.5,-14.6,-61.5,-0.3,-61.2C14,-60.8,27.5,-56.1,40,-60.4Z" transform="translate(100 100)" />
-            </svg>
-            <span>MM</span>
-        </div>
-        <div class="loader-progress">
-            <div class="progress-bar"></div>
+        <div class="loader-logo">MM</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
         </div>
     </div>
     
@@ -35,100 +29,89 @@
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-
     <!-- Header -->
     <header>
         <nav>
             <div class="logo">MM.</div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#about" class="interactive nav-link"><span>01.</span> About</a></li>
-                    <li><a href="#skills" class="interactive nav-link"><span>02.</span> Skills</a></li>
-                    <li><a href="#projects" class="interactive nav-link"><span>03.</span> Projects</a></li>
-                    <li><a href="#contact" class="interactive nav-link"><span>04.</span> Contact</a></li>
-                </ul>
-                <a href="#" class="resume-button interactive">Resume</a>
-            </div>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#about" class="interactive">About</a></li>
+                <li><a href="#skills" class="interactive">Skills</a></li>
+                <li><a href="#projects" class="interactive">Projects</a></li>
+                <li><a href="#contact" class="interactive">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn interactive">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button id="theme-toggle" class="interactive" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+</button>
         </nav>
     </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <ul>
-            <li><a href="#about" class="interactive"><span>01.</span> About</a></li>
-            <li><a href="#skills" class="interactive"><span>02.</span> Skills</a></li>
-            <li><a href="#projects" class="interactive"><span>03.</span> Projects</a></li>
-            <li><a href="#contact" class="interactive"><span>04.</span> Contact</a></li>
-            <li><a href="#" class="interactive">Resume</a></li>
-        </ul>
-    </div>
 
     <!-- Hero Section -->
     <main>
         <section id="hero">
             <div class="hero-content">
-                <p class="greeting" data-animate>Hi, my name is</p>
-                <h1 data-animate>Mohamed Mukshidh.</h1>
-                <h2 class="subtitle" data-animate style="transition-delay: 100ms;">I build for the web and analyze data.</h2>
+                <p style="color: var(--primary-color); font-family: var(--font-mono); margin-bottom: 1rem;">Hi, my name is</p>
+                <h1 data-animate>Mohamed Mukshith.</h1>
+                <p class="subtitle" data-animate style="transition-delay: 100ms;">I build for the web and analyze data.</p>
                 <p class="description" data-animate style="transition-delay: 200ms;">
-                    I'm a <span id="typed-text"></span> from Sri Lanka, passionate about creating dynamic web applications and extracting insights from data.
+                    I'm a <span id="typed-text"></span> from Sri Lanka, passionate about creating dynamic web applications and extracting insights from data. Currently focused on building MERN stack applications with integrated data analysis capabilities.
                 </p>
-                <div class="hero-buttons" data-animate style="transition-delay: 300ms;">
-                    <a href="#projects" class="cta-button interactive">Check out my work!</a>
-                    <a href="#contact" class="secondary-button interactive">Get in touch</a>
-                </div>
+                <a href="#projects" class="cta-button interactive" data-animate style="transition-delay: 300ms;">Check out my work!</a>
             </div>
-            <div class="hero-scroll">
-                <div class="scroll-icon"></div>
-                <span>Scroll Down</span>
+            
+            <div class="hero-social">
+                <a href="https://github.com/mohamedmuqsith" target="_blank" class="interactive"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/m-f-m-mukshith/" target="_blank" class="interactive"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/muqsithmalli6/" target="_blank" class="interactive"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <div class="hero-email">
+                <a href="mailto:mohamed.mohamedmukshidh35@gmail.com" class="interactive">mohamedmukshidh35@gmail.com</a>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" data-animate>
-            <h2 class="section-heading"><span>01.</span> About Me</h2>
+            <h2 class="section-heading"><span class="section-number">01.</span> About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p>Hello! I'm Mohamed, a self-driven developer with a deep curiosity for both full-stack development and the world of data. My journey in tech began with a simple line of code and has since evolved into a passion for building complete, real-world applications from scratch.</p>
                     <p>My goal is to merge the art of creating seamless user experiences with the science of data analysis. Whether it's architecting a robust backend, designing an interactive frontend, or uncovering hidden patterns in a dataset, I am committed to continuous learning and delivering high-quality results.</p>
-                    <p>When I'm not coding, I'm usually exploring new statistical concepts or planning my next big project.</p>
-                    <div class="technologies">
-                        <h3>Technologies I work with:</h3>
-                        <ul>
-                            <li>JavaScript (ES6+)</li>
-                            <li>React.js</li>
-                            <li>Node.js</li>
-                            <li>Python</li>
-                            <li>MongoDB</li>
-                            <li>Express</li>
-                            <li>Pandas</li>
-                            <li>TensorFlow.js</li>
-                        </ul>
-                    </div>
+                    <p>Here are a few technologies I've been working with recently:</p>
+                    <ul class="skills-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>MongoDB</li>
+                        <li>Express.js</li>
+                        <li>Chart.js</li>
+                        <li>TensorFlow.js</li>
+                    </ul>
                 </div>
                 <div class="about-image">
-                    <div class="image-wrapper">
-                        <img src="assets/aboutpic.jpg" alt="A professional photo of Mohamed Mukshidh">
-                        <div class="image-border"></div>
-                    </div>
+                    <img src="assets/aboutpic.jpg" alt="A professional photo of Mohamed Mukshith">
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2 class="section-heading"><span>02.</span> My Technical Skills</h2>
+            <h2 class="section-heading"><span class="section-number">02.</span> My Skills</h2>
             <div class="skills-container">
-                <div class="skills-chart">
-                    <canvas id="skillsChart"></canvas>
+                <div class="skills-chart-container">
+                    <div class="chart-container">
+                        <h3 class="chart-title">Frontend Skills</h3>
+                        <canvas id="frontendChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3 class="chart-title">Backend & Data Skills</h3>
+                        <canvas id="backendChart"></canvas>
+                    </div>
                 </div>
+                
                 <div class="skills-grid" data-animate>
                     <div class="skill-card interactive"><i class="fa-brands fa-html5"></i><h3>HTML5</h3></div>
                     <div class="skill-card interactive"><i class="fa-brands fa-css3-alt"></i><h3>CSS3</h3></div>
@@ -146,205 +129,114 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2 class="section-heading"><span>03.</span> Featured Projects</h2>
+            <h2 class="section-heading"><span class="section-number">03.</span> Featured Projects</h2>
             <div class="project-grid" data-animate>
                 <!-- Project 1 -->
                 <div class="project-card interactive">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Library Management System">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Library Management System">
                         <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Library Management System</h3>
-                                <p>A full-stack library management application with user authentication, book tracking, and admin dashboard.</p>
-                                <div class="project-tech">
-                                    <span>MongoDB</span>
-                                    <span>Express</span>
-                                    <span>React</span>
-                                    <span>Node.js</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://library-mern-stack-pro.vercel.app/" target="_blank" class="interactive"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                    <a href="https://github.com/mohamedmuqsith/library-management-system" target="_blank" class="interactive"><i class="fab fa-github"></i> Source Code</a>
-                                </div>
-                            </div>
+                            <a href="https://library-mern-stack-pro.vercel.app/" target="_blank" class="interactive">View Project</a>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Library Management System</h3>
-                        <p>A comprehensive MERN stack solution for library operations with real-time updates and analytics.</p>
+                        <p>A full-featured library management application built with MERN stack, featuring book catalog, user management, and lending system.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Express</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
                 <div class="project-card interactive">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Task Manager">
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Task Manager</h3>
-                                <p>Productivity application for task management with drag-and-drop functionality and progress tracking.</p>
-                                <div class="project-tech">
-                                    <span>React</span>
-                                    <span>Redux</span>
-                                    <span>Node.js</span>
-                                    <span>MongoDB</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://task-manager-mern-iota.vercel.app/" target="_blank" class="interactive"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                    <a href="https://github.com/mohamedmuqsith/task-manager" target="_blank" class="interactive"><i class="fab fa-github"></i> Source Code</a>
-                                </div>
-                            </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Task Manager">
+                         <div class="project-overlay">
+                            <a href="https://task-manager-mern-iota.vercel.app/" target="_blank" class="interactive">View Project</a>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Task Manager</h3>
-                        <p>A MERN stack task management system with user authentication and real-time updates.</p>
+                        <p>A productivity application with task management, priority setting, and progress tracking features.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>JWT Auth</span>
+                        </div>
                     </div>
                 </div>
-                
                 <!-- Project 3 -->
                 <div class="project-card interactive">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1600132806608-446446a3080a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="BulkMail">
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>BulkMail</h3>
-                                <p>Email marketing platform for sending bulk emails with analytics and template management.</p>
-                                <div class="project-tech">
-                                    <span>React</span>
-                                    <span>Node.js</span>
-                                    <span>MongoDB</span>
-                                    <span>SendGrid API</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://bulkmail-three.vercel.app/" target="_blank" class="interactive"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                    <a href="https://github.com/mohamedmuqsith/bulk-mailer" target="_blank" class="interactive"><i class="fab fa-github"></i> Source Code</a>
-                                </div>
-                            </div>
+                     <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1603792907191-89e55f7009a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BulkMail">
+                         <div class="project-overlay">
+                            <a href="https://bulkmail-three.vercel.app/" target="_blank" class="interactive">View Project</a>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>BulkMail</h3>
-                        <p>Email marketing solution with analytics dashboard and template customization.</p>
-                    </div>
-                </div>
-                
-                <!-- Project 4 - Ongoing -->
-                <div class="project-card interactive">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Data Analysis Dashboard">
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Data Analysis Dashboard</h3>
-                                <p>MERN stack application with integrated data analysis and visualization capabilities.</p>
-                                <div class="project-tech">
-                                    <span>React</span>
-                                    <span>Node.js</span>
-                                    <span>TensorFlow.js</span>
-                                    <span>Chart.js</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="interactive"><i class="fas fa-external-link-alt"></i> Coming Soon</a>
-                                    <a href="#" target="_blank" class="interactive"><i class="fab fa-github"></i> Work in Progress</a>
-                                </div>
-                            </div>
+                        <p>An email marketing tool that allows users to send bulk emails with templates and track open rates.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>NodeMailer</span>
+                            <span>MongoDB</span>
+                            <span>Chart.js</span>
                         </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Data Analysis Dashboard</h3>
-                        <p>Ongoing project combining MERN stack with advanced data analysis features.</p>
                     </div>
                 </div>
             </div>
+
         </section>
+
+        <section id="experience">
+    <h2 class="section-heading"><span class="section-number">05.</span> Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item" data-animate>
+            <div class="timeline-date">2022 - Present</div>
+            <div class="timeline-content">
+                <h3>Full-Stack Developer</h3>
+                <h4>Company Name</h4>
+                <p>Developed and maintained web applications using MERN stack. Implemented data visualization features.</p>
+            </div>
+        </div>
+        <!-- Add more timeline items -->
+    </div>
+</section>
 
         <!-- Contact Section -->
         <section id="contact" data-animate>
-            <h2 class="section-heading"><span>04.</span> Get In Touch</h2>
-            <p class="contact-subtitle">I'm currently seeking new opportunities and am open to collaboration. My inbox is always open, whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card interactive">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>mohamed.mukshidh@example.com</p>
-                        <a href="mailto:mohamed.mukshidh@example.com" class="interactive">Send Message</a>
-                    </div>
-                    
-                    <div class="contact-card interactive">
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Phone</h3>
-                        <p>+94 123 456 789</p>
-                        <a href="tel:+94123456789" class="interactive">Call Me</a>
-                    </div>
-                    
-                    <div class="contact-card interactive">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>Colombo, Sri Lanka</p>
-                        <a href="https://maps.google.com/?q=Colombo,SriLanka" target="_blank" class="interactive">View Map</a>
-                    </div>
-                </div>
-                
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="interactive">Send Message</button>
-                </form>
-            </div>
-            
+            <h2 class="section-heading"><span class="section-number">04.</span> Get In Touch</h2>
+            <p>I'm currently seeking new opportunities and am open to collaboration. My inbox is always open, whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
+            <a href="mailto:mohamed.mohamedmukshidh35@gmail.com" class="cta-button interactive">Say Hello</a>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/m-f-m-mukshith/" target="_blank" class="interactive" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/mohamedmuqsith" target="_blank" class="interactive" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/muqsithmalli6/" target="_blank" class="interactive" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" target="_blank" class="interactive" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" target="_blank" class="interactive" aria-label="Medium"><i class="fa-brands fa-medium"></i></a>
+                <a href="https://github.com/mohamedmuqsith" target="_blank" class="interactive"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/m-f-m-mukshith/" target="_blank" class="interactive"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/muqsithmalli6/" target="_blank" class="interactive"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="interactive"><i class="fab fa-twitter"></i></a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">MM.</div>
-            <p>Full-Stack Developer & Data Analyst</p>
-            <div class="footer-links">
-                <a href="#about" class="interactive">About</a>
-                <a href="#skills" class="interactive">Skills</a>
-                <a href="#projects" class="interactive">Projects</a>
-                <a href="#contact" class="interactive">Contact</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/m-f-m-mukshith/" target="_blank" class="interactive"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/mohamedmuqsith" target="_blank" class="interactive"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/muqsithmalli6/" target="_blank" class="interactive"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="footer-copyright">
-                <p>Designed & Built by Mohamed Mukshidh</p>
-                <p>&copy; 2023 All Rights Reserved</p>
-            </div>
-        </div>
+        <p>Designed & Built by <a href="#" class="interactive">Mohamed Mukshith</a></p>
     </footer>
-
+    
     <!-- Back to Top Button -->
     <div class="back-to-top interactive">
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- Scripts -->
+    
+    <!-- Scripts for Animations -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js">
+      
+    </script>
 </body>
 </html>
